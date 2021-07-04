@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDisable()
     {
-        gameOverScreen.SetActive(true);
         Time.timeScale = 0;
+        gameOverScreen.SetActive(true);
     }
 }
