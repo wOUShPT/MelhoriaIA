@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]private Camera cam;
     [SerializeField] private Rigidbody _rb;
     [SerializeField] private Shooter shooterScript;
+    public GameObject gameOverScreen;
     private Animator _animator;
     private Vector3 _currentVelocity;
 
@@ -34,5 +35,12 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _rb.velocity = _currentVelocity;
+    }
+
+
+    private void OnDisable()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0;
     }
 }
