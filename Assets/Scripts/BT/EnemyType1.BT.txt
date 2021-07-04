@@ -1,0 +1,7 @@
+tree "Idle"
+    sequence
+        while
+            not alerted
+            parallel
+                CheckAround
+                Wait 4.0

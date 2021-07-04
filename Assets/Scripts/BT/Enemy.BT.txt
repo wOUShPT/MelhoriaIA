@@ -1,0 +1,36 @@
+tree "root"
+        fallback
+            tree "Idle"
+            tree "ChasePlayer" 
+             
+
+tree "ChasePlayer" 
+    sequence
+            while
+                alerted
+                fallback
+                    while  
+                        playerDetected
+                        sequence
+                            Chase 
+                            Shoot
+                    while
+                        not playerDetected
+                        sequence
+                            CheckLastPosition
+                            parallel
+                                while
+                                    Wait 15.0
+                                    ForgetPlayer
+                                repeat
+                                    sequence
+                                        CheckAround
+                                        Wait 5.0          
+            
+        
+
+           
+        
+
+            
+       
